@@ -117,6 +117,7 @@ function Home() {
             </div>
             <div className='second-box'>
                 <div className='chat-box'>
+                <h2 className='section-header'>Group Chat</h2>
                 {messages.length > 0 ? messages.map((msg: any) => {
                     const messageTime = new Date(msg.time); 
                     const isCurrentUser = userName === msg.name;
@@ -127,15 +128,18 @@ function Home() {
                           color: isCurrentUser ? 'black' : 'white'
                         }}>
                           {msg.message}
-                          <p>{msg.name}&nbsp;{messageTime.toLocaleTimeString('en-US', { hour12: true })}</p>    
+                          <p style={{color: isCurrentUser ? 'black' : 'white'}}>
+                            {msg.name}&nbsp;{messageTime.toLocaleTimeString('en-US', { hour12: true })}
+                          </p>    
                         </div>
                     );
                     }) : <p>No Messages yet!!!</p>}
                 </div>
                 <div className='room-members'>
+                <h2 className='section-header'>Members</h2>
                     {members.length>0 ? members.map((member : any) => (
                         <div key={member.index}>
-                            {member}
+                            👤{member}
                         </div>
                     )) : <p>No members in the room</p>}
                 </div>
