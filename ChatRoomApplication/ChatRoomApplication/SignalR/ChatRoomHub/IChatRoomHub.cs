@@ -2,7 +2,6 @@
 {
     public interface IChatRoomHub
     {
-        public Task EnterRoom(string name);
-        public Task ExitRoom(string name);
+        public Task<List<string>> GetChatRoomMembersAsync();
     }
 }

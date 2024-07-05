@@ -1,0 +1,345 @@
+.Home {
+    padding: 1%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+.first-box, .bottom-box {
+    flex-shrink: 0;
+    padding: 15px;
+}
+
+.first-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width:98%;
+}
+
+.first-box-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.nameInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 4px;
+    margin-right: 10px;
+    max-width: 300px;
+}
+
+.enter {
+    padding-left: 10%;
+    margin-top: 5px;
+}
+
+.enter-room-button:hover,
+.exit-room-button:hover {
+    background-color: #166fe5;
+}
+
+.enter-room-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.exit {
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+
+.exit-room-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.second-box {
+    display: flex;
+    align-items: stretch; 
+    padding: 2%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    height: 45vh;
+    overflow: hidden;
+}
+
+.room-members,
+.chat-box {
+    border: 1px solid #dddfe2;
+    padding: 15px;
+    height: 46vh;
+    border-radius: 4px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box {
+    width: 70%;
+    margin-right: 20px;
+    background-color: #f0f2f5;
+}
+
+.room-members {
+    width: 30%;
+    margin-left: 20px;
+    background-color: #f0f2f5;
+}
+.bottom-box {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.chatInput {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 20px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #166fe5;
+}
+
+
+.chat-box div {
+    background-color: #1877f2;
+    border-radius: 18px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start;
+}
+
+.chat-box div:nth-child(odd) {
+    
+}
+
+.chat-box div:nth-child {
+    background-color: #1877f2;
+    color: white;
+}
+
+.sender{
+    align-self: flex-end;
+}
+
+.room-members div {
+    padding: 8px 0;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.room-members div:last-child {
+    border-bottom: none;
+}
+
+.enter-room-button:disabled,
+.exit-room-button:disabled,
+.send-button:disabled {
+    background-color: #e4e6eb;
+    color: #bec3c9;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+.chat-box, .room-members {
+    position: relative;
+}
+
+.chat-box p, .room-members p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.chat-box div {
+    display: flex;
+    flex-direction: column;
+    background-color: #1877f2;
+    border-radius: 18px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    align-self: flex-start;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box div:nth-child(odd) {
+    background-color: #e4e6eb;
+}
+
+.chat-box div:nth-child(even) {
+    background-color: #1877f2;
+    color: white;
+}
+
+.chat-box div p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    align-self: flex-end;
+    position: static;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.chat-box div:nth-child(odd) p {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.room-members div {
+    padding: 10px;
+    border-bottom: 1px solid #dddfe2;
+    transition: background-color 0.3s;
+}
+
+.room-members div:hover {
+    background-color: #f0f2f5;
+}
+
+.room-members div:last-child {
+    border-bottom: none;
+}
+
+
+
+
+
+/* .Home {
+    padding: 2%;
+}
+.first-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+.nameInput{
+    flex: 1; 
+    padding: 10px;
+    font-size: 16px;
+}
+
+.enter {
+    padding-left: 10%;
+}
+
+.enter-room-button,
+.exit-room-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.exit {
+    margin-left: 80%; 
+}
+.second-box {
+    display: flex;
+    align-items: flex-start; 
+    padding: 2%;
+}
+
+.room-members,
+.chat-box {
+    border: solid 2px rgb(160, 69, 69);
+    padding: 10px;
+    height: 400px; 
+}
+
+.chat-box {
+    width: 70%; 
+    margin-right: 20px; 
+}
+.room-members {
+    width: 30%; 
+    margin-left: 20px; 
+}
+.bottom-box {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    width: 96%; 
+}
+
+.chatInput {
+    flex: 1; 
+    padding: 10px;
+    font-size: 16px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+} */

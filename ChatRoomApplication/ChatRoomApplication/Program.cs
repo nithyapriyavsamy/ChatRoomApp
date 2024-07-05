@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSignalR();
 
-builder.Services.AddScoped<ChatRoomHub>();
+builder.Services.AddSingleton<IChatRoomHub, ChatRoomHub>();
 
 builder.Services.AddCors(options =>
 {

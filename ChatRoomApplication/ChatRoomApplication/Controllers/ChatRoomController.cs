@@ -12,24 +12,16 @@ namespace ChatRoomApplication.Controllers
     [EnableCors("AllowAll")]
     public class ChatRoomController : ControllerBase
     {
-        private readonly ChatRoomHub _hub;
-        public ChatRoomController(ChatRoomHub hub)
+        private readonly IChatRoomHub _hub;
+        public ChatRoomController(IChatRoomHub hub)
         {
             _hub = hub;
         }
 
-        [HttpPost("enterRoom")]
-        public async Task<ActionResult<UserDto>> EnterRoom(UserDto dto)
+        [HttpGet("roommembers")]
+        public async Task<ActionResult<UserDto>> GetRoomMembers()
         {
-            await _hub.EnterRoom(dto.name);
-            return Ok(dto);
-        }
-
-        [HttpPost("exitRoom")]
-        public async Task<ActionResult> ExitRoom(UserDto dto)
-        {
-            await _hub.ExitRoom(dto.name);
-            return Ok("Done");
+            return Ok(await _hub.GetChatRoomMembersAsync());
         }
     }
 }
